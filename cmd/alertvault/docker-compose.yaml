@@ -1,0 +1,9 @@
+services:
+  alertvault:
+    image: alertvault:latest
+    container_name: alertvault
+    ports:
+      - 8080:8080
+    volumes:
+      - ./config.yaml:/alertvault/config.yaml
+    restart: always

@@ -1,0 +1,4 @@
+cmd/alertvault/alertvault-*
+.vscode
+.idea
+.cache

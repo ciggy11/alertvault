@@ -1,0 +1,23 @@
+http_listen_address: 127.0.0.1:8080
+log_level: info
+backend: redis
+tenant:
+  in_label: true
+  in_annotation: false
+  label: tenantID
+  annotation: tenantID
+  unique_name: fingerprint
+  header: X-Scope-OrgID
+vaultdb:
+  redis:
+    addrs: 0.0.0.0:6379
+    timeout: 3s
+    expiration: 604800s
+    alerts_db: 0
+    alert_group_db: 1
+  s3:
+    bucket: vaultdb
+    region: us-west-2
+    endpoint: http://localhost:9000
+    access_key: minio
+    secret_key: minio123
