@@ -1,8 +1,8 @@
 # AlertVault
 AlertVault receives [HTTP Webhook](https://prometheus.io/docs/alerting/configuration/#webhook-receiver-%3Cwebhook_config%3E) notifications from [Cortex/Mimir AlertManager](https://github.com/cortexproject) and inserted into selected database for storing and analysis.
-It stores both [Alert Group](https://github.com/prometheus/alertmanager) and [Alert](https://github.com/prometheus/alertmanager) per tenant.
+It stores both history of [Alert Group](https://github.com/prometheus/alertmanager) and [Alert](https://github.com/prometheus/alertmanager) per tenant.
 
-Having this data can used for:
+Having historical alerts can used for:
 - Tune alerting rules
 - Understand incident
 - Understand alert's behavior during incident
