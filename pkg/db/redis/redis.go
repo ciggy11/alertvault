@@ -104,6 +104,11 @@ func (c *RedisClient) ZSet(ctx context.Context, member []byte, key string, score
 		log.Errorf("Failed to set alert: %s", err)
 		panic(err)
 	}
+	_, err = c.rdb.Expire(ctx, key, c.expiration).Result()
+	if err != nil {
+        log.Errorf("Failed to set expiration: %s", err)
+        panic(err)
+    }
 	return err
 }
 func (c *RedisClient) ZGetByScore(ctx context.Context, ad *alert.AlertsDesc) ([]*alert.Alert, error) {
